@@ -19,7 +19,7 @@ export class ExternalReactState extends React.Component {
   public render () {
     const chart = this.state
     const stateActions = mapValues(actions, (func: any) =>
-      (...args: any) => this.setState(func(...args))) as typeof actions
+      (...args: Array<any>) => this.setState(func(...args))) as typeof actions
 
     return (
       <Page>
